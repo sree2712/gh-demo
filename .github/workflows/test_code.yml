@@ -43,3 +43,21 @@ jobs:
 
       - name: Run project-info
         run: uv run project-info
+
+  notebook_check:
+    runs-on: ubuntu-24.04
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install the latest version of uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: latest
+
+      - name: Install the project and its dependencies
+        run: uv sync
+
+      - name: Execute Jupyter Notebook
+        run: uv run jupyter execute notebooks/auto_handson.ipynb

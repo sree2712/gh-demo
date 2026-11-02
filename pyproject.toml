@@ -36,6 +36,7 @@ Homepage = "https://github.com/sree2712/gh-demo"
 
 [project.scripts]
 main_script = "gh_demo.main:main"
+project-info = "gh_demo.auto.project_info:show_project_info"
 
 [tool.pytest.ini_options]
 minversion = "6.0"
